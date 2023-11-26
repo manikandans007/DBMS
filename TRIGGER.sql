@@ -1,0 +1,8 @@
+CREATE OR REPLACE TRIGGER display_salary_change
+BEFORE DELETE OR INSERT OR UPDATE ON empolyee
+FOR EACH ROW
+BEGIN
+DBMS_OUTPUT.PUT_LINE('OLD salary:'|| :OLD.salary);
+DBMS_OUTPUT.PUT_LINE('OLD salary:'|| :NEW.salary);
+END;
+/
