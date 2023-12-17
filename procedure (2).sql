@@ -36,10 +36,5 @@ BEGIN
 insert into publisher(name,city,grades)values(c_name,c_city,c_grades);
 commit;
 END;
-BEGIN
-c_name:=&c_name;
-c_city:=&c_city;
-c_grades:=&c_grades;
-insertion(c_name,c_city,c_grades);
-end;
 /
+exec insertion(values);
