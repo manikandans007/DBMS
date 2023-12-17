@@ -17,3 +17,29 @@ BEGIN
  dbms_output.put_line(' Minimum of a and b is : ' || c); 
 END; 
 /
+
+
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE insertion(
+c_name publisher.name%TYPE,
+c_city publisher.city%TYPE,
+c_grades  publisher.grades%TYPE 
+)
+IS
+BEGIN
+insert into publisher(name,city,grades)values(c_name,c_city,c_grades);
+commit;
+END;
+BEGIN
+c_name:=&c_name;
+c_city:=&c_city;
+c_grades:=&c_grades;
+insertion(c_name,c_city,c_grades);
+end;
+/
